@@ -30,9 +30,3 @@ npx serve .
 └── js/
     └── modal.js      # modal open/close + shareable URL hash
 ```
-
-## Adding a section
-
-1. Add a link in the menu: `<a href="#id" data-modal="id">Title</a>`
-2. Add a `<dialog class="modal" id="id">` following the existing ones.
-3. Put its specific styles in `css/sections.css`.
