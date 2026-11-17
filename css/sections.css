@@ -7,7 +7,7 @@
 .profile-photo {
   width: 140px;
   height: 140px;
-  margin: 0.5rem auto 0;
+  margin: 0.75rem auto 1.25rem;  /* room for the rings drawn by box-shadow */
   border: 3px solid var(--ink);
   border-radius: 50%;
   object-fit: cover;

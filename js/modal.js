@@ -25,9 +25,14 @@
   document.querySelectorAll("dialog.modal").forEach((dialog) => {
     dialog.querySelector(".modal__close")?.addEventListener("click", () => dialog.close());
 
-    // A click whose target is the <dialog> itself landed on the backdrop.
+    // Close on backdrop clicks: anything outside the dialog's box.
     dialog.addEventListener("click", (event) => {
-      if (event.target === dialog) dialog.close();
+      if (event.target !== dialog) return;
+      const box = dialog.getBoundingClientRect();
+      const inside =
+        event.clientX >= box.left && event.clientX <= box.right &&
+        event.clientY >= box.top && event.clientY <= box.bottom;
+      if (!inside) dialog.close();
     });
 
     dialog.addEventListener("close", () => {

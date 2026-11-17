@@ -2,25 +2,61 @@
    Modal component (native <dialog>)
    ========================================================================== */
 
+/*
+ * Layout: the <dialog> is a fixed frame (border + gold inner line) that never
+ * scrolls; only .modal__content scrolls, and it sits inside the gold line so
+ * the scrollbar never covers it.
+ */
 .modal {
+  --frame-gap: 7px;    /* paper strip between outer border and gold line */
+  --frame-line: 2px;   /* gold line thickness */
+
   width: min(640px, calc(100% - 32px));
   max-height: 85vh;
   margin: auto;
-  padding: 1.5rem clamp(1.25rem, 5vw, 2.5rem) 2rem;
+  padding: 0;
   border: 3px solid var(--ink);
   border-radius: 18px;
   background: var(--paper);
   color: var(--ink);
-  /* Offset shadow + double inner frame (paper + gold), like a fileteado sign */
-  box-shadow:
-    8px 8px 0 var(--ink),
-    inset 0 0 0 7px var(--paper),
-    inset 0 0 0 9px var(--sun);
-  overflow: auto;
+  box-shadow: 8px 8px 0 var(--ink);   /* offset shadow, fileteado sign style */
+  overflow: hidden;
 }
 
 .modal[open] {
+  display: flex;
+  flex-direction: column;
   animation: modal-in 320ms var(--ease-bounce);
+}
+
+/* Gold inner line, fixed to the frame */
+.modal::after {
+  content: "";
+  position: absolute;
+  inset: var(--frame-gap);
+  border: var(--frame-line) solid var(--sun);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.modal__content {
+  flex: 1;
+  min-height: 0;
+  margin: calc(var(--frame-gap) + var(--frame-line));
+  padding: 1.5rem clamp(1rem, 5vw, 2.25rem) 1.75rem;
+  border-radius: 10px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--celeste) transparent;
+}
+
+.modal__content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal__content::-webkit-scrollbar-thumb {
+  background: var(--celeste);
+  border-radius: 8px;
 }
 
 .modal::backdrop {
@@ -34,6 +70,7 @@
 
 .modal__close {
   position: absolute;
+  z-index: 1;
   top: 14px;
   right: 14px;
   width: 40px;
