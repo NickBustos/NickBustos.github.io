@@ -1,0 +1,15 @@
+# Original full-resolution photos (only optimized versions are committed)
+assets/img/originals/
+assets/img/foto1.jpeg
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Dependencies (if tooling is added later)
+node_modules/

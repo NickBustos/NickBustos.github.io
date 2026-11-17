@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Section content shown inside each modal
+   ========================================================================== */
+
+/* --- About me ------------------------------------------------------------ */
+
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  margin: 0.5rem auto 0;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--celeste);
+  /* Medallion: gold ring + dark outer ring + offset shadow */
+  box-shadow:
+    0 0 0 5px var(--sun),
+    0 0 0 8px var(--ink),
+    6px 6px 0 8px var(--ink);
+}
+
+/* --- My work ------------------------------------------------------------- */
+
+.projects {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+}
+
+.project {
+  padding: 1rem;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--white), rgb(116 172 223 / 0.18));
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 180ms ease;
+}
+
+.project:hover {
+  transform: translate(-2px, -2px);
+}
+
+.project h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.project p {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+/* --- Contact ------------------------------------------------------------- */
+
+.contact {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  align-items: baseline;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px dashed rgb(16 35 63 / 0.2);
+}
+
+.contact li:last-child {
+  border-bottom: 0;
+}
+
+.contact span {
+  min-width: 5.5rem;
+  font-weight: 700;
+  color: var(--celeste);
+  -webkit-text-stroke: 0.4px var(--ink);
+}

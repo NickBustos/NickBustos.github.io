@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <meta name="description" content="Personal portfolio">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Nunito:wght@400;700&display=swap">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/sections.css">
+
+  <script src="js/modal.js" defer></script>
+</head>
+<body>
+  <main class="stage">
+    <img class="ornament" src="assets/ornaments/filete.svg" alt="" aria-hidden="true">
+
+    <nav class="menu" aria-label="Main">
+      <a href="#about" data-modal="about">About me</a>
+      <a href="#work" data-modal="work">My work</a>
+      <a href="#contact" data-modal="contact">Contact</a>
+    </nav>
+
+    <img class="ornament ornament--flipped" src="assets/ornaments/filete.svg" alt="" aria-hidden="true">
+  </main>
+
+  <!-- About me -->
+  <dialog class="modal" id="about" aria-labelledby="about-title">
+    <button class="modal__close" type="button" aria-label="Close">&times;</button>
+    <img class="profile-photo" src="assets/img/profile.jpg" alt="Photo of Nick Bustos" width="140" height="140">
+    <h2 class="modal__title" id="about-title">About me</h2>
+    <div class="modal__body">
+      <p>Hi, I'm <strong>Nick Bustos</strong>, a full stack developer from Argentina and currently living and working in several projects in Spain.</p>
+      <p>[A short paragraph about you: what you do, what you like to build and what you're looking for.]</p>
+    </div>
+  </dialog>
+
+  <!-- My work -->
+  <dialog class="modal" id="work" aria-labelledby="work-title">
+    <button class="modal__close" type="button" aria-label="Close">&times;</button>
+    <img class="modal__ornament" src="assets/ornaments/filete.svg" alt="" aria-hidden="true">
+    <h2 class="modal__title" id="work-title">My work</h2>
+    <div class="modal__body">
+      <ul class="projects">
+        <li class="project">
+          <h3>[Project 1]</h3>
+          <p>[What it is and the tech you used.]</p>
+          <a href="#">View project →</a>
+        </li>
+        <li class="project">
+          <h3>[Project 2]</h3>
+          <p>[What it is and the tech you used.]</p>
+          <a href="#">View project →</a>
+        </li>
+        <li class="project">
+          <h3>[Project 3]</h3>
+          <p>[What it is and the tech you used.]</p>
+          <a href="#">View project →</a>
+        </li>
+      </ul>
+    </div>
+  </dialog>
+
+  <!-- Contact -->
+  <dialog class="modal" id="contact" aria-labelledby="contact-title">
+    <button class="modal__close" type="button" aria-label="Close">&times;</button>
+    <img class="modal__ornament" src="assets/ornaments/filete.svg" alt="" aria-hidden="true">
+    <h2 class="modal__title" id="contact-title">Contact</h2>
+    <div class="modal__body">
+      <ul class="contact">
+        <li><span>Email</span><a href="mailto:[your-email]">[your-email]</a></li>
+        <li><span>LinkedIn</span><a href="#">[linkedin.com/in/…]</a></li>
+        <li><span>GitHub</span><a href="#">[github.com/…]</a></li>
+      </ul>
+    </div>
+  </dialog>
+</body>
+</html>

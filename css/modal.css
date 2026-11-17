@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Modal component (native <dialog>)
+   ========================================================================== */
+
+.modal {
+  width: min(640px, calc(100% - 32px));
+  max-height: 85vh;
+  margin: auto;
+  padding: 1.5rem clamp(1.25rem, 5vw, 2.5rem) 2rem;
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  background: var(--paper);
+  color: var(--ink);
+  /* Offset shadow + double inner frame (paper + gold), like a fileteado sign */
+  box-shadow:
+    8px 8px 0 var(--ink),
+    inset 0 0 0 7px var(--paper),
+    inset 0 0 0 9px var(--sun);
+  overflow: auto;
+}
+
+.modal[open] {
+  animation: modal-in 320ms var(--ease-bounce);
+}
+
+.modal::backdrop {
+  background: rgb(16 35 63 / 0.35);
+  backdrop-filter: blur(3px);
+}
+
+.modal[open]::backdrop {
+  animation: fade-in 220ms ease;
+}
+
+.modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 1.6rem;
+  line-height: 1;
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+.modal__close:hover,
+.modal__close:focus-visible {
+  background: var(--sun);
+  transform: scale(1.08);
+}
+
+.modal__ornament {
+  width: min(220px, 60%);
+  margin: 0.25rem auto 0;
+}
+
+.modal__title {
+  margin: 0.25rem 0 1.25rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  color: var(--celeste);
+  -webkit-text-stroke: 1.5px var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 3px 3px 0 var(--ink);
+}
+
+.modal__body {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.modal__body p + p {
+  margin-top: 0.75rem;
+}
+
+.modal__body a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration-color: var(--sun);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+}
+
+.modal__body a:hover {
+  background: rgb(246 180 14 / 0.25);
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.94); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal[open],
+  .modal[open]::backdrop {
+    animation: none;
+  }
+}

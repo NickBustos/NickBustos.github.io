@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Flecha gruesa estilo filete: relleno blanco, contorno negro grueso, filo celeste -->
+  <path d="M4 3 L4 25 L9.6 19.6 L13.6 28.4 L18 26.4 L14 17.8 L21.8 17.8 Z"
+        fill="#ffffff" stroke="#10233f" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M6.4 8.4 L6.4 19.4 L9.4 16.6"
+        fill="none" stroke="#74ACDF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

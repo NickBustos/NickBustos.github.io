@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Base: design tokens, reset and page background
+   ========================================================================== */
+
+:root {
+  --white: #ffffff;
+  --paper: #fffdf6;
+  --celeste: #74acdf;   /* official Argentine flag light blue */
+  --sun: #f6b40e;       /* Sol de Mayo yellow */
+  --ink: #10233f;       /* dark outline, fileteado style */
+
+  --font-display: "Berkshire Swash", Georgia, serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+
+  --ease-bounce: cubic-bezier(.34, 1.56, .64, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(135deg, var(--white) 0%, var(--white) 12%, var(--celeste) 100%);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--font-body);
+  cursor: url("../assets/icons/cursor.svg") 4 3, auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a,
+button {
+  cursor: inherit;
+  font: inherit;
+}
