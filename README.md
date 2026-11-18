@@ -21,12 +21,16 @@ npx serve .
 ├── assets/
 │   ├── icons/        # custom cursor
 │   ├── img/          # profile photo
-│   └── ornaments/    # fileteado SVG ornaments
+│   ├── ornaments/    # fileteado SVG ornaments
+│   └── video/        # project gameplay clips
 ├── css/
 │   ├── base.css      # design tokens, reset, background
 │   ├── menu.css      # home screen and main menu
 │   ├── modal.css     # reusable modal component
 │   └── sections.css  # About / Work / Contact content
 └── js/
-    └── modal.js      # modal open/close + shareable URL hash
+    ├── data/
+    │   └── projects.js  # project list shown in "My work"
+    ├── projects.js      # renders the project cards
+    └── modal.js         # modal open/close + shareable URL hash
 ```

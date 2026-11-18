@@ -19,37 +19,141 @@
     6px 6px 0 8px var(--ink);
 }
 
+.section-subtitle {
+  margin: 1.75rem 0 0.9rem;
+  padding-top: 1.25rem;
+  border-top: 2px dashed rgb(16 35 63 / 0.2);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--celeste);
+  -webkit-text-stroke: 1px var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 2px 2px 0 var(--ink);
+}
+
+.skills {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.skills__group dt {
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.skills__group dd {
+  margin: 0;
+}
+
+.skills__tags {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
 /* --- My work ------------------------------------------------------------- */
 
 .projects {
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .project {
-  padding: 1rem;
+  padding: 1.1rem 1.25rem 1.25rem;
   border: 2px solid var(--ink);
   border-radius: 12px;
   background: linear-gradient(135deg, var(--white), rgb(116 172 223 / 0.18));
   box-shadow: 4px 4px 0 var(--ink);
-  transition: transform 180ms ease;
 }
 
-.project:hover {
-  transform: translate(-2px, -2px);
+.project__media {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--ink);
+  margin-bottom: 0.9rem;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
 }
 
-.project h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.35rem;
+.project__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
 }
 
-.project p {
-  font-size: 0.95rem;
-  margin-bottom: 0.6rem;
+.project__title {
+  font-size: 1.2rem;
+}
+
+.project__meta {
+  font-size: 0.9rem;
+  color: rgb(16 35 63 / 0.7);
+}
+
+.project__description {
+  margin-top: 0.6rem;
+  font-size: 0.98rem;
+}
+
+.project__highlights {
+  margin-top: 0.6rem;
+  padding-left: 1.2rem;
+  font-size: 0.93rem;
+}
+
+.project__highlights li::marker {
+  color: var(--sun);
+}
+
+.project__tags {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  padding: 0.1rem 0.6rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  background: var(--white);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.badge {
+  padding: 0.1rem 0.6rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge--wip {
+  background: var(--sun);
+}
+
+.badge--soon {
+  background: var(--celeste);
+}
+
+.project__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.9rem;
 }
 
 /* --- Contact ------------------------------------------------------------- */

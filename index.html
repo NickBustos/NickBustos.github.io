@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="css/modal.css">
   <link rel="stylesheet" href="css/sections.css">
 
+  <script src="js/data/projects.js" defer></script>
+  <script src="js/projects.js" defer></script>
   <script src="js/modal.js" defer></script>
 </head>
 <body>
@@ -38,10 +40,38 @@
       <h2 class="modal__title" id="about-title">About me</h2>
       <div class="modal__body">
         <p>Hi, I'm <strong>Nick Bustos</strong>, a full stack developer from Argentina and currently living in Spain and working on several projects.</p>
-        <p>I started programming at 16 through a school program, writing my first lines of code in Visual Studio. While still studying, I took on freelance work building and maintaining sites on Wix and Shopify.</p>
+        <p>I started programming at 16 through a school program, writing my first lines of code in Visual Basic. While still studying, I took on freelance work building and maintaining sites on Wix and Shopify.</p>
         <p>I later moved to Spain, where I earned a Higher Vocational Degree in Web Application Development (DAW), a two-year professional program, while working part-time managing WordPress sites and handling DevOps tasks, from server maintenance to deployment environments.</p>
         <p>A full-time job offer led me to put my Bachelor's in Computer Engineering on hold, which I plan to resume, and to work as a full-stack developer on projects built with Angular, React, Python and Java, including hybrid mobile apps with Ionic.</p>
         <p>Currently, as a hobby, I'm building video games with Godot (GDScript), and I really enjoy the mix of creativity and planning that goes into them.</p>
+
+        <h3 class="section-subtitle">Skills</h3>
+        <dl class="skills">
+          <div class="skills__group">
+            <dt>Frontend &amp; Mobile</dt>
+            <dd><ul class="skills__tags"><li class="tag">Angular</li><li class="tag">TypeScript</li><li class="tag">RxJS</li><li class="tag">Ionic</li><li class="tag">Capacitor</li><li class="tag">Angular Material</li><li class="tag">PrimeNG</li><li class="tag">Bootstrap</li></ul></dd>
+          </div>
+          <div class="skills__group">
+            <dt>Backend</dt>
+            <dd><ul class="skills__tags"><li class="tag">Java</li><li class="tag">Spring Boot</li><li class="tag">Node.js</li><li class="tag">REST APIs</li></ul></dd>
+          </div>
+          <div class="skills__group">
+            <dt>Databases</dt>
+            <dd><ul class="skills__tags"><li class="tag">PostgreSQL</li><li class="tag">SQL Server</li><li class="tag">MongoDB</li></ul></dd>
+          </div>
+          <div class="skills__group">
+            <dt>CMS</dt>
+            <dd><ul class="skills__tags"><li class="tag">WordPress</li><li class="tag">Drupal</li><li class="tag">Shopify</li><li class="tag">Wix</li></ul></dd>
+          </div>
+          <div class="skills__group">
+            <dt>DevOps &amp; Tools</dt>
+            <dd><ul class="skills__tags"><li class="tag">Docker</li><li class="tag">Git</li><li class="tag">Linux servers</li><li class="tag">Firebase</li></ul></dd>
+          </div>
+          <div class="skills__group">
+            <dt>Game development</dt>
+            <dd><ul class="skills__tags"><li class="tag">Godot</li><li class="tag">GDScript</li></ul></dd>
+          </div>
+        </dl>
       </div>
     </div>
   </dialog>
@@ -53,23 +83,8 @@
       <img class="modal__ornament" src="assets/ornaments/filete.svg" alt="" aria-hidden="true">
       <h2 class="modal__title" id="work-title">My work</h2>
       <div class="modal__body">
-        <ul class="projects">
-          <li class="project">
-            <h3>[Project 1]</h3>
-            <p>[What it is and the tech you used.]</p>
-            <a href="#">View project →</a>
-          </li>
-          <li class="project">
-            <h3>[Project 2]</h3>
-            <p>[What it is and the tech you used.]</p>
-            <a href="#">View project →</a>
-          </li>
-          <li class="project">
-            <h3>[Project 3]</h3>
-            <p>[What it is and the tech you used.]</p>
-            <a href="#">View project →</a>
-          </li>
-        </ul>
+        <!-- Filled from js/data/projects.js -->
+        <ul class="projects" data-projects></ul>
       </div>
     </div>
   </dialog>
@@ -82,9 +97,9 @@
       <h2 class="modal__title" id="contact-title">Contact</h2>
       <div class="modal__body">
         <ul class="contact">
-          <li><span>Email</span><a href="mailto:[your-email]">[your-email]</a></li>
-          <li><span>LinkedIn</span><a href="#">[linkedin.com/in/…]</a></li>
-          <li><span>GitHub</span><a href="#">[github.com/…]</a></li>
+          <li><span>Email</span><a href="mailto:bustosnnick@gmail.com">bustosnnick@gmail.com</a></li>
+          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/nicolas-bustos-660a4818a/">Mi LinkedIn</a></li>
+          <li><span>GitHub</span><a href="https://github.com/NickBustos/">Mi GIT</a></li>
         </ul>
       </div>
     </div>

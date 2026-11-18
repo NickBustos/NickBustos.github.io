@@ -1,5 +1,5 @@
-# Original full-resolution photos (only optimized versions are committed)
-assets/img/originals/
+# Original full-size media (only web-optimized versions are committed)
+assets/**/originals/
 assets/img/foto1.jpeg
 
 # OS
