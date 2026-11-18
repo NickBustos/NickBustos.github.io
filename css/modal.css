@@ -61,7 +61,13 @@
 
 .modal::backdrop {
   background: rgb(16 35 63 / 0.35);
-  backdrop-filter: blur(3px);
+}
+
+/* Blur only on devices with a precise pointer; on phones it causes flicker */
+@media (hover: hover) and (pointer: fine) {
+  .modal::backdrop {
+    backdrop-filter: blur(3px);
+  }
 }
 
 .modal[open]::backdrop {
@@ -71,8 +77,9 @@
 .modal__close {
   position: absolute;
   z-index: 1;
-  top: 14px;
-  right: 14px;
+  /* Clear of the gold frame and the scrollbar (8px) on the right */
+  top: 18px;
+  right: calc(var(--frame-gap) + var(--frame-line) + 8px + 10px);
   width: 40px;
   height: 40px;
   border: 2px solid var(--ink);

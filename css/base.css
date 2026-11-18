@@ -28,11 +28,27 @@ body {
 }
 
 body {
-  background: linear-gradient(135deg, var(--white) 0%, var(--white) 12%, var(--celeste) 100%);
-  background-attachment: fixed;
+  background: var(--celeste);
   color: var(--ink);
   font-family: var(--font-body);
   cursor: url("../assets/icons/cursor.svg") 4 3, auto;
+}
+
+/*
+ * Flag gradient on a fixed layer instead of `background-attachment: fixed`,
+ * which mobile browsers repaint badly (jumps and stretching).
+ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, var(--white) 0%, var(--white) 12%, var(--celeste) 100%);
+}
+
+/* Freeze the page behind an open modal */
+body:has(dialog[open]) {
+  overflow: hidden;
 }
 
 img {
