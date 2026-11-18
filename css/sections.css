@@ -178,6 +178,35 @@
   border-bottom: 0;
 }
 
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--sun);
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+/* Beat the generic `.modal__body a` link styles */
+.modal__body a.button,
+.modal__body a.button:hover {
+  text-decoration: none;
+  background: var(--sun);
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
 .contact span {
   min-width: 5.5rem;
   font-weight: 700;
