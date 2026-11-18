@@ -14,10 +14,12 @@
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/modal.css">
   <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/music.css">
 
   <script src="js/data/projects.js" defer></script>
   <script src="js/projects.js" defer></script>
   <script src="js/modal.js" defer></script>
+  <script src="js/music.js" defer></script>
 </head>
 <body>
   <main class="stage">
@@ -101,8 +103,35 @@
           <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/nicolas-bustos-660a4818a/" target="_blank" rel="noopener noreferrer">Nicolas Bustos</a></li>
           <li><span>GitHub</span><a href="https://github.com/NickBustos" target="_blank" rel="noopener noreferrer">@NickBustos</a></li>
         </ul>
+
+        <a class="button" href="assets/docs/NickBustos_Resume.pdf" download>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download resume (PDF)
+        </a>
       </div>
     </div>
   </dialog>
+
+  <!-- Music player: Spotify embed, loaded only after the first click -->
+  <aside class="music" aria-label="Music">
+    <div class="music__panel" id="music-panel" hidden>
+      <div class="music__embed" data-spotify-uri="spotify:track:2KANYyxNxyyAoUhoRPtOgE"></div>
+    </div>
+    <button class="music__toggle" type="button" aria-expanded="false" aria-controls="music-panel" aria-label="Open music player">
+      <svg class="music__vinyl" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="#10233f"/>
+        <g fill="none" stroke="#2c4a73" stroke-width="1">
+          <circle cx="32" cy="32" r="25"/>
+          <circle cx="32" cy="32" r="21"/>
+          <circle cx="32" cy="32" r="17"/>
+        </g>
+        <path d="M14 20 A22 22 0 0 1 26 11" fill="none" stroke="#ffffff" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="32" r="11" fill="#74acdf"/>
+        <path d="M21 32 A11 11 0 0 1 43 32 Z" fill="#ffffff"/>
+        <circle cx="32" cy="32" r="4.5" fill="#f6b40e" stroke="#10233f" stroke-width="1"/>
+        <circle cx="32" cy="32" r="1.4" fill="#10233f"/>
+      </svg>
+    </button>
+  </aside>
 </body>
 </html>
